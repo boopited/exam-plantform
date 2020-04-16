@@ -1,29 +1,22 @@
-package demo.examinationContext;
+package demo.examinationContext.domain.model;
+
+import demo.common.ValueObject;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Objects;
 
-public class BlankQuiz {
+@Getter
+@AllArgsConstructor
+class BlankQuiz implements ValueObject<BlankQuiz> {
 
     private final String question;
     private final String referenceAnswer;
     private final int score;
 
-    public BlankQuiz(String question, String answer, int score) {
-        this.question = question;
-        this.referenceAnswer = answer;
-        this.score = score;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getReferenceAnswer() {
-        return referenceAnswer;
-    }
-
-    public int getScore() {
-        return score;
+    @Override
+    public boolean sameValueAs(BlankQuiz other) {
+        return equals(other);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package demo.examinationContext;
+package demo.examinationContext.domain.model;
 
 import org.junit.*;
 import org.junit.rules.ExpectedException;

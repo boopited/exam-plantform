@@ -1,10 +1,15 @@
-package demo.examinationContext;
+package demo.examinationContext.domain.model;
+
+import demo.common.ValueObject;
+import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class Paper {
+@Getter
+class Paper implements ValueObject<Paper> {
 
     private ArrayList blankQuizzes = new ArrayList();
 
@@ -13,7 +18,12 @@ public class Paper {
     }
 
     public List<BlankQuiz> getBlankQuizzes() {
-        return blankQuizzes;
+        return Collections.unmodifiableList(blankQuizzes);
+    }
+
+    @Override
+    public boolean sameValueAs(Paper other) {
+        return equals(other);
     }
 
     @Override

@@ -1,9 +1,12 @@
-package demo.examinationContext;
+package demo.examinationContext.domain.model;
+
+import lombok.Getter;
 
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Getter
 public class Examination {
     private String id;
     private Paper paper;
@@ -17,26 +20,6 @@ public class Examination {
         this.teacherId = teacher;
         this.duration = duration;
         this.dueTime = new Date(dueTime.getTime());
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public Paper getPaper() {
-        return paper;
-    }
-
-    public String getTeacherId() {
-        return teacherId;
-    }
-
-    public Date getDueTime() {
-        return dueTime;
-    }
-
-    public long getDuration() {
-        return duration;
     }
 
     private static boolean validatePaper(Paper paper) {
