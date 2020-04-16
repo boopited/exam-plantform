@@ -1,5 +1,6 @@
 package demo.examinationContext.domain.model;
 
+import demo.common.Entity;
 import lombok.Getter;
 
 import java.util.Date;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Getter
-public class Examination {
+public class Examination implements Entity<Examination> {
     private String id;
     private Paper paper;
     private String teacherId;
@@ -20,6 +21,11 @@ public class Examination {
         this.teacherId = teacher;
         this.duration = duration;
         this.dueTime = new Date(dueTime.getTime());
+    }
+
+    @Override
+    public boolean sameIdentityAs(Examination other) {
+        return id.equals(other.id);
     }
 
     private static boolean validatePaper(Paper paper) {
