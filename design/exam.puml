@@ -52,7 +52,7 @@ package answerSheet <<Aggregate>>  {
         examinationId: String
         answers: List
         score: Number
-        submit()
+        submit(String answerId, String answer, Number score)
         handIn()
         review()
         {static} assign(): AnswerSheet
@@ -62,7 +62,7 @@ package answerSheet <<Aggregate>>  {
         id: String
         answer: String
         score: Number
-        submit()
+        submit(String answer, Number score)
     }
 
     AnswerSheet "1" o-- "5..20" Answer
