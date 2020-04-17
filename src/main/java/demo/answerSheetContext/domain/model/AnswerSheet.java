@@ -20,7 +20,7 @@ class AnswerSheet implements Entity<AnswerSheet> {
 
     @Override
     public boolean sameIdentityAs(AnswerSheet other) {
-        return false;
+        return id.equals(other.getId());
     }
 
     public static AnswerSheet assign(String id, String studentId, String examinationId, List<Answer> answers) {

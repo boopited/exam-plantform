@@ -21,7 +21,7 @@ class Answer implements Entity<Answer> {
 
     @Override
     public boolean sameIdentityAs(Answer other) {
-        return false;
+        return id.equals(other.getId());
     }
 
     @Override
